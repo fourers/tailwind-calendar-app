@@ -1,4 +1,4 @@
-const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 function getMarch2027() {
   const year = 2027;
@@ -30,7 +30,7 @@ export function March2027Calendar() {
 
   return (
     <section className="mx-auto max-w-5xl p-6">
-      <h2 className="calendar-heading mb-4 text-2xl font-semibold">
+      <h2 className="calendar-heading mb-4 text-2xl font-semibold text-center">
         March 2027
       </h2>
 
@@ -67,13 +67,9 @@ export function March2027Calendar() {
               data-[tone=sky]:text-slate-950
             "
             data-empty={day === null}
-            data-tone={['blue', 'cyan', 'indigo', 'sky'][index % 4]}
+            data-tone={["blue", "cyan", "indigo", "sky"][index % 4]}
           >
-            {day !== null && (
-              <span className="text-sm font-medium">
-                {day}
-              </span>
-            )}
+            {day !== null && <span className="text-sm font-medium">{day}</span>}
           </div>
         ))}
       </div>
