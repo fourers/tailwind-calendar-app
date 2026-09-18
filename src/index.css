@@ -1,4 +1,9 @@
+@import "monaspace-font/neon.css";
 @import "tailwindcss";
+
+body {
+  font-family: "Monaspace Neon", monospace;
+}
 
 .dark .theme-toggle {
   border-color: rgb(51 65 85);
