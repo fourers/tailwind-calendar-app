@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.dark .theme-toggle {
+	border-color: rgb(51 65 85);
+}
+
+.dark .theme-toggle:hover {
+	background-color: rgb(30 41 59);
+}
+
+.dark .calendar-heading {
+	color: rgb(241 245 249);
+}
+
+.dark .calendar-weekday {
+	border-color: rgb(51 65 85);
+	color: rgb(148 163 184);
+}
+
+.dark .calendar-date {
+	border-color: rgb(51 65 85);
+	box-shadow: 0 1px 3px rgb(2 6 23 / 30%);
+}
