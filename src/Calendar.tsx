@@ -44,8 +44,8 @@ export function Calendar({ month, year, events = [] }: CalendarProps) {
   }).format(new Date(year, month - 1, 1));
 
   return (
-    <section className="mx-auto max-w-5xl p-6">
-      <h2 className="calendar-heading mb-4 text-2xl font-semibold text-center">
+    <section className="mx-auto max-w-5xl p-4">
+      <h2 className="calendar-heading mb-2 text-2xl font-semibold text-center">
         {monthName} {year}
       </h2>
 
@@ -96,7 +96,7 @@ export function Calendar({ month, year, events = [] }: CalendarProps) {
                   .map((event) => (
                     <div
                       key={event.id}
-                      className="absolute inset-x-1 top-1/2 -translate-y-1/2 truncate rounded-md bg-amber-400 px-1 py-1 text-xs font-semibold text-amber-950"
+                      className="absolute inset-x-1 top-1/2 -translate-y-1/2 truncate rounded-md bg-rose-400 px-1 py-1 text-xs font-semibold text-rose-950"
                       title={event.label}
                     >
                       {event.label}

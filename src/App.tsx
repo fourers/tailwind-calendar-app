@@ -98,14 +98,16 @@ function App() {
         {isDarkMode ? "Light mode" : "Dark mode"}
       </button>
 
-      {monthsToDisplay.map((month) => (
-        <Calendar
-          key={month}
-          month={month}
-          year={2027}
-          events={getEventsForMonth(month, 2027)}
-        />
-      ))}
+      <div className="pb-6">
+        {monthsToDisplay.map((month) => (
+          <Calendar
+            key={month}
+            month={month}
+            year={2027}
+            events={getEventsForMonth(month, 2027)}
+          />
+        ))}
+      </div>
     </main>
   );
 }
