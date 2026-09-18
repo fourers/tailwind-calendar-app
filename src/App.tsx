@@ -1,66 +1,151 @@
 import { useState } from "react";
+
 import { Calendar } from "./Calendar";
 
 const calendarEvents = [
   {
-    id: "team-retreat",
-    label: "Team retreat",
-    start: "2027-03-05",
-    end: "2027-03-07",
+    id: "bahrain-grand-prix",
+    label: "Bahrain Grand Prix",
+    start: "2027-03-12",
+    end: "2027-03-14",
   },
   {
-    id: "spring-break",
-    label: "Spring break",
-    start: "2027-04-12",
-    end: "2027-04-16",
+    id: "saudi-arabian-grand-prix",
+    label: "Saudi Arabian Grand Prix",
+    start: "2027-03-19",
+    end: "2027-03-21",
   },
   {
-    id: "product-launch",
-    label: "Product launch",
-    start: "2027-05-03",
-    end: "2027-05-03",
+    id: "australian-grand-prix",
+    label: "Australian Grand Prix",
+    start: "2027-04-02",
+    end: "2027-04-04",
   },
   {
-    id: "planning-sprint",
-    label: "Planning sprint",
-    start: "2027-06-20",
-    end: "2027-06-24",
+    id: "japanese-grand-prix",
+    label: "Japanese Grand Prix",
+    start: "2027-04-09",
+    end: "2027-04-11",
   },
   {
-    id: "summer-holiday",
-    label: "Summer holiday",
-    start: "2027-07-19",
-    end: "2027-07-30",
+    id: "chinese-grand-prix",
+    label: "Chinese Grand Prix",
+    start: "2027-04-16",
+    end: "2027-04-18",
   },
   {
-    id: "roadshow",
-    label: "Roadshow",
-    start: "2027-08-10",
-    end: "2027-08-12",
+    id: "miami-grand-prix",
+    label: "Miami Grand Prix",
+    start: "2027-04-30",
+    end: "2027-05-02",
   },
   {
-    id: "q3-review",
-    label: "Q3 review",
-    start: "2027-09-15",
-    end: "2027-09-17",
+    id: "canadian-grand-prix",
+    label: "Canadian Grand Prix",
+    start: "2027-05-21",
+    end: "2027-05-23",
   },
   {
-    id: "conference",
-    label: "Conference",
-    start: "2027-10-04",
-    end: "2027-10-08",
+    id: "monaco-grand-prix",
+    label: "Monaco Grand Prix",
+    start: "2027-06-04",
+    end: "2027-06-06",
   },
   {
-    id: "client-release",
-    label: "Client release",
-    start: "2027-11-22",
-    end: "2027-11-25",
+    id: "portuguese-grand-prix",
+    label: "Portuguese Grand Prix",
+    start: "2027-06-18",
+    end: "2027-06-20",
   },
   {
-    id: "holiday-shutdown",
-    label: "Holiday shutdown",
-    start: "2027-12-20",
-    end: "2027-12-31",
+    id: "british-grand-prix",
+    label: "British Grand Prix",
+    start: "2027-07-02",
+    end: "2027-07-04",
+  },
+  {
+    id: "austrian-grand-prix",
+    label: "Austrian Grand Prix",
+    start: "2027-07-09",
+    end: "2027-07-11",
+  },
+  {
+    id: "belgian-grand-prix",
+    label: "Belgian Grand Prix",
+    start: "2027-07-23",
+    end: "2027-07-25",
+  },
+  {
+    id: "hungarian-grand-prix",
+    label: "Hungarian Grand Prix",
+    start: "2027-07-30",
+    end: "2027-08-01",
+  },
+  {
+    id: "italian-grand-prix",
+    label: "Italian Grand Prix",
+    start: "2027-09-03",
+    end: "2027-09-05",
+  },
+  {
+    id: "spanish-grand-prix",
+    label: "Spanish Grand Prix",
+    start: "2027-09-10",
+    end: "2027-09-12",
+  },
+  {
+    id: "azerbaijan-grand-prix",
+    label: "Azerbaijan Grand Prix",
+    start: "2027-09-24",
+    end: "2027-09-26",
+  },
+  {
+    id: "turkish-grand-prix",
+    label: "Turkish Grand Prix",
+    start: "2027-10-01",
+    end: "2027-10-03",
+  },
+  {
+    id: "singapore-grand-prix",
+    label: "Singapore Grand Prix",
+    start: "2027-10-08",
+    end: "2027-10-10",
+  },
+  {
+    id: "united-states-grand-prix",
+    label: "United States Grand Prix",
+    start: "2027-10-22",
+    end: "2027-10-24",
+  },
+  {
+    id: "mexican-grand-prix",
+    label: "Mexico City Grand Prix",
+    start: "2027-10-29",
+    end: "2027-10-31",
+  },
+  {
+    id: "sao-paulo-grand-prix",
+    label: "São Paulo Grand Prix",
+    start: "2027-11-05",
+    end: "2027-11-07",
+  },
+  {
+    id: "las-vegas-grand-prix",
+    label: "Las Vegas Grand Prix",
+    start: "2027-11-18",
+    end: "2027-11-20",
+  },
+  {
+    id: "qatar-grand-prix",
+    label: "Qatar Grand Prix",
+    start: "2027-12-03",
+    end: "2027-12-05",
+  },
+  {
+    id: "abu-dhabi-grand-prix",
+    label: "Abu Dhabi Grand Prix",
+    start: "2027-12-10",
+    end: "2027-12-12",
   },
 ];
 
@@ -91,7 +176,7 @@ function App() {
     >
       <button
         type="button"
-        className="theme-toggle absolute right-6 top-6 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-200"
+        className="theme-toggle absolute top-6 right-6 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-200"
         onClick={() => setIsDarkMode((enabled) => !enabled)}
         aria-pressed={isDarkMode}
       >
@@ -100,12 +185,7 @@ function App() {
 
       <div className="pb-6">
         {monthsToDisplay.map((month) => (
-          <Calendar
-            key={month}
-            month={month}
-            year={2027}
-            events={getEventsForMonth(month, 2027)}
-          />
+          <Calendar key={month} month={month} year={2027} events={getEventsForMonth(month, 2027)} />
         ))}
       </div>
     </main>
