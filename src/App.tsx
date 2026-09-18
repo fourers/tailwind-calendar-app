@@ -184,6 +184,7 @@ function App() {
       </button>
 
       <div className="pb-6">
+        <h1 className="pt-6 pb-2 text-center text-3xl font-bold">F1 2027 Calendar</h1>
         {monthsToDisplay.map((month) => (
           <Calendar key={month} month={month} year={2027} events={getEventsForMonth(month, 2027)} />
         ))}
