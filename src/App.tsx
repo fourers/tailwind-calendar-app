@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { March2027Calendar } from "./MarchCalendar";
+import { Calendar } from "./Calendar";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -20,7 +20,9 @@ function App() {
       >
         {isDarkMode ? "Light mode" : "Dark mode"}
       </button>
-      <March2027Calendar />
+      <Calendar month={3} year={2027} />
+      <Calendar month={4} year={2027} />
+      <Calendar month={5} year={2027} />
     </main>
   );
 }
