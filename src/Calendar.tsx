@@ -3,6 +3,14 @@ const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 type CalendarProps = {
   month: number;
   year: number;
+  events?: MultiDayEvent[];
+};
+
+export type MultiDayEvent = {
+  id: string;
+  label: string;
+  start: string;
+  end: string;
 };
 
 function getCalendarDays(month: number, year: number) {
@@ -25,7 +33,11 @@ function getCalendarDays(month: number, year: number) {
   return days;
 }
 
-export function Calendar({ month, year }: CalendarProps) {
+function getDateKey(year: number, month: number, day: number) {
+  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+export function Calendar({ month, year, events = [] }: CalendarProps) {
   const days = getCalendarDays(month, year);
   const monthName = new Intl.DateTimeFormat("en-US", {
     month: "long",
@@ -51,6 +63,7 @@ export function Calendar({ month, year }: CalendarProps) {
           <div
             key={index}
             className="calendar-date
+              relative
               aspect-square
               rounded-lg
               border-slate-200
@@ -68,12 +81,29 @@ export function Calendar({ month, year }: CalendarProps) {
               data-[tone=blue]:text-slate-950
               data-[tone=cyan]:text-slate-950
               data-[tone=indigo]:text-slate-950
-              data-[tone=sky]:text-slate-950
-            "
+              data-[tone=sky]:text-slate-950"
             data-empty={day === null}
             data-tone={["blue", "cyan", "indigo", "sky"][month % 4]}
           >
-            {day !== null && <span className="text-sm font-medium">{day}</span>}
+            {day !== null && (
+              <>
+                <span className="text-sm font-medium">{day}</span>
+                {events
+                  .filter((event) => {
+                    const dateKey = getDateKey(year, month, day);
+                    return dateKey >= event.start && dateKey <= event.end;
+                  })
+                  .map((event) => (
+                    <div
+                      key={event.id}
+                      className="absolute inset-x-1 top-1/2 -translate-y-1/2 truncate rounded-md bg-amber-400 px-1 py-1 text-xs font-semibold text-amber-950"
+                      title={event.label}
+                    >
+                      {event.label}
+                    </div>
+                  ))}
+              </>
+            )}
           </div>
         ))}
       </div>
