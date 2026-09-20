@@ -17,7 +17,7 @@ A responsive calendar website.
 - [Bun](https://bun.sh/) installed
 - [Just](https://just.systems/) installed for the command shortcuts below
 
-### Install dependencies
+Install dependencies
 
 ```bash
 just install
