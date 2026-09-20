@@ -10,6 +10,10 @@
   "rules": {
     "react/rules-of-hooks": "error",
     "react/only-export-components": ["warn", { "allowConstantExport": true }],
-    "better-tailwindcss/enforce-consistent-line-wrapping": "warn"
+    "better-tailwindcss/enforce-consistent-line-wrapping": [
+      "warn",
+      { "group": "emptyLine", "strictness": "loose" }
+    ],
+    "better-tailwindcss/enforce-consistent-class-order": "warn"
   }
 }

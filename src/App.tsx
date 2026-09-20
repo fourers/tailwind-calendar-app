@@ -170,8 +170,8 @@ function App() {
     <main
       className={
         isDarkMode
-          ? "dark flow-root min-h-screen bg-slate-950 text-slate-100"
-          : "flow-root min-h-screen bg-slate-50 text-slate-900"
+          ? `dark flow-root min-h-screen bg-slate-950 text-slate-100`
+          : `flow-root min-h-screen bg-slate-50 text-slate-900`
       }
     >
       <button
@@ -179,7 +179,9 @@ function App() {
         className="
           theme-toggle relative mt-4 mr-4 ml-auto flex w-fit rounded-md border
           border-slate-300 px-3 py-2 text-sm font-medium transition
+
           hover:bg-slate-200
+
           sm:absolute sm:top-6 sm:right-6 sm:m-0
         "
         onClick={() => setIsDarkMode((enabled) => !enabled)}
@@ -189,9 +191,7 @@ function App() {
       </button>
 
       <div className="pb-6">
-        <h1
-          className="calendar-heading pt-6 pb-2 text-center text-3xl font-bold"
-        >
+        <h1 className="calendar-heading pt-6 pb-2 text-center text-3xl font-bold">
           F1 2027 Calendar
         </h1>
         {monthsToDisplay.map((month) => (
