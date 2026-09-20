@@ -1,35 +1,45 @@
-# React + TypeScript + Vite
+# Tailwind Calendar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive calendar website.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Oxc formatting and linting tools
 
-## React Compiler
+## Getting started
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Prerequisites
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+- [Bun](https://bun.sh/) installed
+- [Just](https://just.systems/) installed for the command shortcuts below
 
-## Expanding the Oxlint configuration
+### Install dependencies
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+just install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Start the local development server:
+
+```bash
+just dev
+```
+
+Then open the local URL printed by Vite in your browser.
+
+## Commands
+
+Run these commands from the project root:
+
+| Command        | Description                                         |
+| -------------- | --------------------------------------------------- |
+| `just install` | Install dependencies with Bun                       |
+| `just dev`     | Start the Vite development server                   |
+| `just build`   | Type-check and create a production build            |
+| `just preview` | Preview the production build locally                |
+| `just lint`    | Format the code and run the linter                  |
+| `just update`  | Update the Bun lockfile without installing packages |
