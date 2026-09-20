@@ -96,7 +96,7 @@ export function Calendar({ month, year, events = [] }: CalendarProps) {
                   .map((event) => (
                     <div
                       key={event.id}
-                      className="absolute inset-x-1 top-1/2 -translate-y-1/2 rounded-md bg-rose-400 px-1 py-1 text-xs font-semibold break-words whitespace-normal text-rose-950"
+                      className="absolute inset-x-1 top-1/2 -translate-y-1/2 rounded-md bg-rose-400 px-0.5 py-0.5 text-[5px] leading-tight font-semibold break-words whitespace-normal text-rose-950 sm:px-1 sm:py-1 sm:text-xs"
                       title={event.label}
                     >
                       {event.label}

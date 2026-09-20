@@ -170,13 +170,13 @@ function App() {
     <main
       className={
         isDarkMode
-          ? "dark min-h-screen bg-slate-950 text-slate-100"
-          : "min-h-screen bg-slate-50 text-slate-900"
+          ? "dark flow-root min-h-screen bg-slate-950 text-slate-100"
+          : "flow-root min-h-screen bg-slate-50 text-slate-900"
       }
     >
       <button
         type="button"
-        className="theme-toggle absolute top-6 right-6 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-200"
+        className="theme-toggle relative ml-auto mr-4 mt-4 flex w-fit rounded-md border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-200 sm:absolute sm:top-6 sm:right-6 sm:m-0"
         onClick={() => setIsDarkMode((enabled) => !enabled)}
         aria-pressed={isDarkMode}
       >
